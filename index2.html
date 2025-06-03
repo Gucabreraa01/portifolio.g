@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfólio Gustavo Paim Cabrera</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #3e6a96;
+      color: #0a317e;
+    }
+    header {
+      background-color: #022a58;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    section {
+      max-width: 800px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h2 {
+      border-bottom: 2px solid #007acc;
+      padding-bottom: 8px;
+    }
+    .projects {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .project {
+      background: #e9f0fc;
+      border-radius: 5px;
+      padding: 15px;
+      width: 250px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .project:hover {
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      transform: translateY(-5px);
+      cursor: pointer;
+    }
+    .project img {
+      max-width: 100%;
+      border-radius: 5px;
+      height: 140px;
+      object-fit: cover;
+      margin-bottom: 10px;
+      transition: transform 0.3s ease;
+    }
+    .project img:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #022a58;
+      color: white;
+      margin-top: 40px;
+    }
+    a {
+      color: #002f4e;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #0059b3;
+      text-decoration: underline;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none; /* escondido por padrão */
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .modal-content {
+      background-color: white;
+      border-radius: 8px;
+      max-width: 600px;
+      width: 100%;
+      padding: 20px;
+      position: relative;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    .close-btn {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #555;
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+    .close-btn:hover {
+      color: #000;
+    }
+    .modal img {
+      max-width: 100%;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Gustavo Paim Cabrera</h1>
+    <p>Desenvolvedor Front-end | Criando projetos incríveis</p>
+  </header>
+
+  <section id="sobre">
+    <h2>Sobre mim</h2>
+    <p>Olá! Eu sou o Gustavo, tenho experiência em desenvolvimento web e tecnologia. Gosto de criar sites modernos e funcionais usando HTML, CSS e JavaScript. Quero fazer do seu projeto um site de qualidade que transmita seu caráter e sua personalidade impulsionando-o e fazendo do seu negocio um sucesso.</p>
+  </section>
+
+  <section id="projetos">
+    <h2>Projetos</h2>
+    <div class="projects">
+      <div class="project" data-title="Site Portfólio" data-img="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=600&q=80" data-desc="Meu primeiro portfólio pessoal, mostrando meus trabalhos em HTML, CSS e JavaScript.">
+        <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=250&q=80" alt="Projeto 1" />
+        <h3>Site Portfólio</h3>
+        <p>Meu primeiro portfólio pessoal, mostrando meus trabalhos.</p>
+        <a href="#" class="open-modal">Ver projeto</a>
+      </div>
+      <div class="project" data-title="Landing Page" data-img="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" data-desc="Uma landing page para um produto fictício, com design moderno e responsivo.">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=250&q=80" alt="Projeto 2" />
+        <h3>Landing Page</h3>
+        <p>Uma landing page para um produto fictício.</p>
+        <a href="#" class="open-modal">Ver projeto</a>
+      </div>
+      <div class="project" data-title="Blog Simples" data-img="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80" data-desc="Um blog básico criado com HTML e CSS puro, focado em simplicidade e conteúdo.">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=250&q=80" alt="Projeto 3" />
+        <h3>Blog Simples</h3>
+        <p>Um blog básico criado com HTML e CSS puro.</p>
+        <a href="#" class="open-modal">Ver projeto</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>Email: <a href="mailto:gustavo@email.com">gustavo@email.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/seu-perfil" target="_blank">linkedin.com/in/seu-perfil</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Gustavo Paim Cabrera. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <img id="modalImage" src="" alt="Imagem do projeto" />
+      <p id="modalDescription"></p>
+    </div>
+  </div>
+
+  <script>
+    // Seleciona todos os botões "Ver projeto"
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalImage = document.getElementById('modalImage');
+    const modalDescription = document.getElementById('modalDescription');
+    const closeModalBtn = document.getElementById('closeModal');
+
+    document.querySelectorAll('.open-modal').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const project = e.target.closest('.project');
+        modalTitle.textContent = project.getAttribute('data-title');
+        modalImage.src = project.getAttribute('data-img');
+        modalImage.alt = project.getAttribute('data-title');
+        modalDescription.textContent = project.getAttribute('data-desc');
+        modal.style.display = 'flex';
+      });
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    // Fecha o modal ao clicar fora do conteúdo
+    window.addEventListener('click', e => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+
+    // Fecha o modal com a tecla ESC
+    window.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && modal.style.display === 'flex') {
+        modal.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
+
